@@ -59,6 +59,7 @@ User Function zAula03()
     msgInfo(cValToChar( iLogco ) + CRLF+ cValToChar(iLogico)) 
     msgInfo(cValToChar(dData1) + CRLF+ cValToChar(dData2) + CRLF+ cValToChar(dData3) )
     Alert(aNome[1] + " " + aSobrenome[1])
+    msgInfo("Yakisoba")
 
    
 
