@@ -24,7 +24,7 @@ User Function zAula03()
     //Variáveis do tipo Data
     Local dData1 := sTod("24/07/2023")
     Local dData2 := Date()
-    Local dData3 := dDataBase
+    //Local dData3 := dDataBase()
 
     //Bloco de código
     bAoQuadrado := { |nValor | nQuadrado := nValor * nValor, Alert("Valor ao quadrado: " + cValToChar(nQuadrado))}
@@ -53,13 +53,31 @@ User Function zAula03()
         Alert(aPessoa[nAtual][1] + dToS(aPessoa[nAtual][2]) + aPessoa[nAtual][3])
     Next
 
+    //Inserindo elemento no Array
+    aSize(aPessoa, Len(aPessoa) +1)// Aumetando o tamanho do array em uma posição  
+    aIns(aPessoa, 1) //Comando onde é informado a posição desejada para a inserção do dado no array
+    aPessoa[1]:={"Manito El Pato Loko", sToD("24022020","Gameplays")}
+    Alert("Linha 2, Coluna 1:" + aPessoa[2][1])
+
+    //Procurando um elemento no array
+    //            Tira todos espaços || Deixa em Caixa alta
+    nPos := aScan(aPessoa, {|x| AllTrim(Upper(x[1])) == "LUIS"})
+    If nPos > 0
+        MsgInfo("Luis encontrado, na linha " + cValToChar(nPos) + ".", "Atencao")
+    else
+        MsgAlert("Luis não foi encontrado!!!!!", "Atenção")    
+    EndIf        
     
+
+
+
     msgInfo(cNome)
     msgInfo(cValToChar(nIdade + nMedia)) 
     msgInfo(cValToChar( iLogco ) + CRLF+ cValToChar(iLogico)) 
-    msgInfo(cValToChar(dData1) + CRLF+ cValToChar(dData2) + CRLF+ cValToChar(dData3) )
+    //msgInfo(cValToChar(dData1) + CRLF+ cValToChar(dData2) + CRLF+ cValToChar(dData3) )
     Alert(aNome[1] + " " + aSobrenome[1])
     msgInfo("Yakisoba")
+    
 
    
 
