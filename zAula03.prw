@@ -68,6 +68,10 @@ User Function zAula03()
         MsgAlert("Luis não foi encontrado!!!!!", "Atenção")    
     EndIf        
     
+    //Excluindo um elemento no array
+    aDel(aPessoa,nPos)
+    aSize(aPessoa, Len(aPessoa) -1)
+    Alert("Array aPessoa com " + cValtoChar(Len(aPessoa)) + " linhas")
 
 
 
