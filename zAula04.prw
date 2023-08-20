@@ -93,8 +93,22 @@ User Function zAula04()
         Alert("Caiu no Else")
     endIf
 
+    //Operador .AND.
+    If 1 == 1 .AND. "D" == "Z"
+        Alert("OK")
+    else
+        Alert("Não OK")
+    EndIf
 
+    //Operador .OR.
+    If 1 == 1 .OR. "D" == "Z"
+        Alert("OK")
+    else
+        Alert("Não OK")
+    EndIf 
 
+    //Operador Default
+    fFuncao()
 
 
     
@@ -103,7 +117,12 @@ Return
 
 
 Static Function fFunction(cVar1, cVar2)
- cVar1 := "Variável 01"
- cVar2 := "Variável 02"
+    Default cVar1 := "teste"
+    Default cVar2 := "teste02"
+
+
+    Alert("CVar1: " + cVar1 + CRLF + "cVar2: " + cVar2)   
+    cVar1 := "Variável 01"
+    cVar2 := "Variável 02"
         
 Return 
