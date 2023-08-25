@@ -58,6 +58,18 @@ User Function zAula05()
 
     MsgInfo("Pares: " + cPares)
 
+    
+
+    //Estrutura de repetição While
+    While .T.
+        //Se a pergunta for confirmada, volta o laço
+        If MsgYesNo("Deseja continuar o laço?", "Atenção")
+            Loop
+        Else
+            Exit 
+        EndIf       
+    EndDo
+
     RestArea(aArea)
     
 Return 
