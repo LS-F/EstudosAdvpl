@@ -8,6 +8,7 @@
 /*/
 User Function zAula07()
     Local aArea := GetArea()
+    Local aAreaSB1 := SB1->(GetArea())
     Local nAtual := 0
 
     //Construindo consulta
@@ -20,7 +21,7 @@ User Function zAula07()
 	WHERE
 	    A2_FILIAL = %xFilial:SA2%
 	    AND A2_MSBLQL != '1'
-	    AND SA.2%NOTdEL%
+	    AND SA2.%NOTdEL%
     EndSql
 
     //Enquanto houver dados na query
@@ -33,6 +34,28 @@ User Function zAula07()
 
     MsgInfo(cValToChar(nAtual) + "fornecedor(es) encontrado(s)!", "Atenção")
 
+    BeginSql Alias "QRY_SB1"
+        SELECT 
+            B1_COD,
+            B1_DESC
+        FROM
+            %table:SB1% SB1
+        WHERE
+            B1_FILIAL = %xFilial:SB1%
+            AND B1_TIPO = 'MP'
+            AND SB1.%NOTdEL%
+    EndSql
+
+    While ! QRY_SB1->(EoF())
+        nAtual++
+        QRY_SB1->(DbSkip())
+    EndDO
+    QRY_SB1->(DbCloseArea())
+
+    MsgInfo(cValToChar(nAtual) + " produto(s) encontrado(s)!", "ATENÇÃO")
+
+
+    RestArea(aAreaSB1)
     RestArea(aArea)
     
 Return
