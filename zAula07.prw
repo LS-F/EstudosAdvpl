@@ -28,11 +28,19 @@ User Function zAula07()
     While ! QRY_SA2->(EoF()) // EoF = Enquanto não for fim do arquivo
         nAtual++
 
+          //Laço de repetição em outra tabela.
+        SE2->(DbSeek(xFilial("SE2")))      
+            While ! SE2->(EoF()) .And. SE2->E2_FORNECE == QRY_SA2->A2_COD
+                Alert("Deu certo!")
+                SE2->(DbSkip())
+            
+            EndDo
+
         QRY_SA2->(DbSkip())
     EndDo
     QRY_SA2->(DbCloseArea())
 
-    MsgInfo(cValToChar(nAtual) + "fornecedor(es) encontrado(s)!", "Atenção")
+    MsgInfo(cValToChar(nAtual) + " fornecedor(es) encontrado(s)!", "Atenção")
 
     BeginSql Alias "QRY_SB1"
         SELECT 
