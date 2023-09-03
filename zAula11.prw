@@ -18,3 +18,5 @@ User Function MA020ROT()
     RestArea(aArea)
 
 Return aRotNov
+
+
