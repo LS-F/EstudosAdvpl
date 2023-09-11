@@ -9,11 +9,11 @@ User Function zAula14()
     Local cJanTitulo := "tela teste 002"
     Local lDimPixel := .T.
     Local lCentral := .T.
-    Local oDlg 
+    Local oJanela 
 
-    oDlg := TDialog():New(0, 0, nJanAltu, nJanLarg, cJanTitulo, , , , , , , , , lDimPixel)
+    oJanela  := TDialog():New(0, 0, nJanAltu, nJanLarg, cJanTitulo, , , , , , , , , lDimPixel)
 
-    oDlg:ACTIVATE(, , , lCentral, , , , , ,)
+    oJanela :ACTIVATE(, , , lCentral, , , , , ,)
 
 
     RestArea(aArea)
