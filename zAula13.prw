@@ -44,7 +44,7 @@ Return
 @Since  	 09/09/2023
 /*/
 Static Function Tela02()
-     Local nJanAltu := 100
+    Local nJanAltu := 100
     Local nJanLarg := 200
     Local lDimPixels := .T.
     Local lCentraliz := .T.
