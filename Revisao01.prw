@@ -1,6 +1,6 @@
 #include "Totvs.ch"
 
-//R
+//Revisão sobre a função TDialog
 
 User Function zAula14()
     Local aArea := GetArea()
