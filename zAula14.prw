@@ -31,11 +31,11 @@ User Function zAula14()
     oJanela := TDialog():New(0, 0, nJanAltu, nJanLarg, cJanTitulo, , , , , , /*nCorFundo*/, , , lDimPixels)   
 
       //Exibindo campo na tela
-        oJanela := TGet():New( nLinha,nColuna,{|u|if(PCount()>0,cCampo1,cCampo1:=u)},oJanela,060,040,"@!",,0,,,.F.,,.T.,,.F.,,.F.,.F.,,.F.,.F.,,cCampo1,,,, )
+        oCampo1 := TGet():New( nLinha,nColuna,{|u|if(PCount()>0,cCampo1,cCampo1:=u)},oJanela,060,040,"@!",,0,,,.F.,,.T.,,.F.,,.F.,.F.,,.F.,.F.,,cCampo1,,,, )
 
 
     //Ativa e exibe a Janela
-    oJanela:ACTIVATE(, , , lCentraliz, , , bBlocoIni,.T.)
+    oJanela:ACTIVATE(, , , lCentraliz, , , bBlocoIni)
 
    
 
