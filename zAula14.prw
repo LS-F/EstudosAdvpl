@@ -27,6 +27,7 @@ User Function zAula14()
     Local cDescProd := Space(TamSx3("B1_DESC")[1])
     Local cTipoProd := Space(TamSx3("B1_TIPO")[1])
     Local cUndProd := Space(TamSx3("B1_UM")[1])
+    Local cArmPad  := Space(TamSx3("B1_LOCPAD")[1])
 
 
     //Local nLinha := 40
@@ -39,12 +40,15 @@ User Function zAula14()
     oJanela := TDialog():New(0, 0, nJanAltu, nJanLarg, cJanTitulo, , , , , , /*nCorFundo*/, , , lDimPixels)   
 
       //Exibindo campos na tela
-        oProdCod := TGet():New( 40,10,{|u|if(PCount()>0,cProdCod:=u,cProdCod)},oJanela,080,010,"@!",/*blocoDeValidacao*/,0,/*nCorFundoTexto*/,/*tFont*/,.F.,/*parametro13*/,.T.,/*parametro15*/,.F.,/*blocoDeCodigo*/,.F.,.F.,/*blocoDeCodigo*/,.F.,.F.,/*parametro23*/,cProdCod,/*parametro24*/,/*parametro26*/,/*parametro27*/,.F.,.F.,/*parametro30*/,"Cod. Prod.",, )
-        oDescProd := TGet():New( 40,120,{|u|if(PCount()>0,cDescProd:=u,cDescProd)},oJanela,160,010,"@!",/*blocoDeValidacao*/,0,/*nCorFundoTexto*/,/*tFont*/,.F.,/*parametro13*/,.T.,/*parametro15*/,.F.,/*blocoDeCodigo*/,.F.,.F.,/*blocoDeCodigo*/,.F.,.F.,/*parametro23*/,cDescProd,/*parametro24*/,/*parametro26*/,/*parametro27*/,.F.,.F.,/*parametro30*/,"Descr. Prod.",, )
-        oTipoProd := TGet():New( 60,10,{|u|if(PCount()>0,cTipoProd:=u,cTipoProd)},oJanela,015,010,"@!",/*blocoDeValidacao*/,0,/*nCorFundoTexto*/,/*tFont*/,.F.,/*parametro13*/,.T.,/*parametro15*/,.F.,/*blocoDeCodigo*/,.F.,.F.,/*blocoDeCodigo*/,.F.,.F.,/*parametro23*/,cTipoProd,/*parametro24*/,/*parametro26*/,/*parametro27*/,.F.,.T.,/*parametro30*/,"Tipo Prod.",, )
+        oProdCod := TGet():New( 40,10,{|u|if(PCount()>0,cProdCod:=u,cProdCod)},oJanela,080,010,"@!",/*blocoDeValidacao*/,0,/*nCorFundoTexto*/,/*tFont*/,.F.,/*parametro13*/,.T.,/*parametro15*/,.F.,/*blocoDeCodigo*/,.F.,.F.,/*blocoDeCodigo*/,.F.,.F.,/*parametro23*/,cProdCod,/*parametro24*/,/*parametro26*/,/*parametro27*/,.T.,.F.,/*parametro30*/,"Codigo",1, )
+        oDescProd := TGet():New( 40,120,{|u|if(PCount()>0,cDescProd:=u,cDescProd)},oJanela,160,010,"@!",/*blocoDeValidacao*/,0,/*nCorFundoTexto*/,/*tFont*/,.F.,/*parametro13*/,.T.,/*parametro15*/,.F.,/*blocoDeCodigo*/,.F.,.F.,/*blocoDeCodigo*/,.F.,.F.,/*parametro23*/,cDescProd,/*parametro24*/,/*parametro26*/,/*parametro27*/,.T.,.F.,/*parametro30*/,"Descricao",1, )
+        oTipoProd := TGet():New( 40,310,{|u|if(PCount()>0,cTipoProd:=u,cTipoProd)},oJanela,020,010,"@!",/*blocoDeValidacao*/,0,/*nCorFundoTexto*/,/*tFont*/,.F.,/*parametro13*/,.T.,/*parametro15*/,.F.,/*blocoDeCodigo*/,.F.,.F.,/*blocoDeCodigo*/,.F.,.F.,/*parametro23*/,cTipoProd,/*parametro24*/,/*parametro26*/,/*parametro27*/,.T.,.F.,/*parametro30*/,"Tipo",1, )
         oTipoProd:cF3 :="02"//Consulta padrão para Tipo de Produtos
-        oUndProd := TGet():New( 80,10,{|u|if(PCount()>0,cUndProd:=u,cUndProd)},oJanela,015,010,"@!",/*blocoDeValidacao*/,0,/*nCorFundoTexto*/,/*tFont*/,.F.,/*parametro13*/,.T.,/*parametro15*/,.F.,/*blocoDeCodigo*/,.F.,.F.,/*blocoDeCodigo*/,.F.,.F.,/*parametro23*/,cUndProd,/*parametro24*/,/*parametro26*/,/*parametro27*/,.F.,.T.,/*parametro30*/,"Und. Med",, )
-        oUndProdd:cF3 :="SAH"//Consulta padrão para Tipo de Produtos
+        oUndProd := TGet():New( 65,10,{|u|if(PCount()>0,cUndProd:=u,cUndProd)},oJanela,015,010,"@!",/*blocoDeValidacao*/,0,/*nCorFundoTexto*/,/*tFont*/,.F.,/*parametro13*/,.T.,/*parametro15*/,.F.,/*blocoDeCodigo*/,.F.,.F.,/*blocoDeCodigo*/,.F.,.F.,/*parametro23*/,cUndProd,/*parametro24*/,/*parametro26*/,/*parametro27*/,.T.,.F.,/*parametro30*/,"Unidade",1, )
+        oUndProd:cF3 :="SAH"//Consulta padrão para Unidade de Medida
+        oArmPad := TGet():New( 65,60,{|u|if(PCount()>0,cArmPad:=u,cArmPad)},oJanela,015,010,"@!",/*blocoDeValidacao*/,0,/*nCorFundoTexto*/,/*tFont*/,.F.,/*parametro13*/,.T.,/*parametro15*/,.F.,/*blocoDeCodigo*/,.F.,.F.,/*blocoDeCodigo*/,.F.,.F.,/*parametro23*/,cArmPad,/*parametro24*/,/*parametro26*/,/*parametro27*/,.T.,.F.,/*parametro30*/,"Armazem Pad.",1, )
+        oArmPad:cF3 :="NNR"//Consulta padrão para Locais de estoque
+        
     
     //Ativa e exibe a Janela
     oJanela:ACTIVATE(, , , lCentraliz, , , bBlocoIni)
@@ -64,14 +68,8 @@ User Function zAula14()
 Return
 
 
-/*/{Protheus.doc}   zSalvaB1()
-@Description 
-@Type		 
-@Author 	 
-@Since  	 01/01/2024
-/*/
+Static Function zSalvaB1(cProdCod,cDescProd,cTipoProd,cUndProd,cArmPad) 
 
-Static Function zSalvaB1() 
 
  DBSELECTAREA( "SB1" )
         SB1->(DbSetOrder(1))
@@ -81,9 +79,7 @@ Static Function zSalvaB1()
               SB1->B1_COD := cProdCod
               SB1->B1_DESC := cDescProd
               SB1->B1_TIPO := cTipoProd
-              SB1->B1_UM := cUndProd
-
-            
+              SB1->B1_UM := cUndProd            
             MsUnlock()
 
   DBCloseArea()
