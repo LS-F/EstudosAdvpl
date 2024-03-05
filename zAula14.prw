@@ -7,7 +7,6 @@
 @Since  	 09/09/2023
 /*/
 User Function zAula14()
-    //Variáveis Janela
     Local aArea := getArea()
     Local nJanAltu := 600
     Local nJanLarg := 800
@@ -17,24 +16,13 @@ User Function zAula14()
     Local bBlocoCan := {|| lOk := .F., oJanela:End()}
     Local aOutrasAc := { { "BMP", {||Alert("Cliquei no 1")}, "Botão 1"}, {"BMP", {|| Tela02()}, "Tela 2"}}
     Local bBlocoIni := {|| EnchoiceBar(oJanela,bBlocoOk,bBlocoCan,,aOutrasAc)}
-    Local cJanTitulo := "Cadastro de Produtos"
-
-    //Variável Janela
-    Local oJanela
-
-    //Variáveis Campos
+    Local cJanTitulo := "Cadastro de Produtos"    
+    Local oJanela //Variável Janela   
     Local cProdCod := Space(TamSx3("B1_COD")[1])
     Local cDescProd := Space(TamSx3("B1_DESC")[1])
     Local cTipoProd := Space(TamSx3("B1_TIPO")[1])
     Local cUndProd := Space(TamSx3("B1_UM")[1])
     Local cArmPad  := Space(TamSx3("B1_LOCPAD")[1])
-
-
-    //Local nLinha := 40
-    //Local nColuna := 10
-
-    
-    
 
     //Criando a Dialog
     oJanela := TDialog():New(0, 0, nJanAltu, nJanLarg, cJanTitulo, , , , , , /*nCorFundo*/, , , lDimPixels)   
@@ -52,15 +40,6 @@ User Function zAula14()
     
     //Ativa e exibe a Janela
     oJanela:ACTIVATE(, , , lCentraliz, , , bBlocoIni)
-
-
- 
-    
-   
-
-
-   
-
 
 
     restArea(aArea)
