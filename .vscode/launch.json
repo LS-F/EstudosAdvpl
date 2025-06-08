@@ -23,7 +23,11 @@
 		},
 		{
 			"label": "apsdu"
+		},
+		{
+			"label": "SIGAEST"
 		}
 	],
-	"lastProgramExecuted": "apsdu"
+	"lastProgramExecuted": "SIGAEST",
+	"lastProgramArguments": []
 }
