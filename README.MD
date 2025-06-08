@@ -8,7 +8,6 @@ Através de exemplos práticos, estou registrando os conhecimentos adquiridos so
 
 - Criação de relatórios
 - Manipulação de tabelas padrão do Protheus (como SE1, SE2, SB1)
-- Utilização de funções como `FWPrintSetup()` e `FWPrint()`
 - Boas práticas com arrays e estruturas da linguagem
 
 ## 📁 Estrutura
@@ -27,4 +26,4 @@ Este repositório é pessoal, mas sugestões de melhoria e feedbacks são sempre
 
 ---
 
-Feito com 💡 e dedicação por [LS-F](https://github.com/LS-F)
+Feito por [LS-F](https://github.com/LS-F)
