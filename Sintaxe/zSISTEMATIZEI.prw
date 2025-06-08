@@ -32,16 +32,6 @@ User Function zJanela()
     oEndereco := TGet():New( 35,20,{|u|IIF(PCount()>0,cEndereco,cEndereco:=u)},oJanela,096,009, "@!",,0,,,.F.,,.T.,,.F.,,.F.,.F.,,.F.,.F.,,cEndereco,,,, )
 
     oButton1 := TButton():New( 60, 20, "Verificar conteúdo",oJanela,{||MSGINFO(cNome,"Texto Digitado")}, 60,10,,,.F.,.T.,.F.,,.F.,,,.F. ) 
-
-
-
-
     oJanela:ACTIVATE(,,,.T.)
-    
-
-
-
-
-    //Private xNome := 
     
 Return 

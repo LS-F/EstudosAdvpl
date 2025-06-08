@@ -1,4 +1,4 @@
-//#INCLUDE "TOTVS.CH"
+#INCLUDE "TOTVS.CH"
 #INCLUDE "FWMBROWSE.CH"
 #INCLUDE "FWMVCDEF.CH"
 /*/{Protheus.doc} zAula09
@@ -16,8 +16,8 @@ User Function zAula09()
 
     //Pegando o modelo de dados, setando a operação de inclusão
     oModel:= FWLoadModel("MATA020")
-    oModel: SetOperation(3)
-    oModel: Activate()
+    oModel:SetOperation(3)
+    oModel:Activate()
 
     //Pegando o model dos campos da SA2
     oSA2Mod:= oModel:getModel("SA2MASTER")
@@ -46,7 +46,7 @@ User Function zAula09()
         EndIf    
     
     //Se não deu certo a inclusão, mostra a mensagem de erro
-    If ! lDeuCerto
+    If !lDeuCerto
         //Busca o Erro do Modelo de Dados
         aErro := oModel:GetErrorMessage()
 

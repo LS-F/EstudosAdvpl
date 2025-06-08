@@ -20,9 +20,9 @@ User Function zTeste()
     Local cNome := "Curso AdvPL"
 
     /* 4. Corpo do programa*/
-    MsgInfo("Estamos no [" + cNome + "], hoje Ã© " + dToC(dDataAtu) + " , Ã s " + cHoraAtu, "AtenÃ§Ã£o")
-    MsgInfo("Ontem seria " + dToc(DaySub(dDataAtu,1)), "AtenÃ§Ã£o")
-    MsgInfo("MÃªs passado seria " + dToc(MonthSub(dDataAtu,1)), "AtenÃ§Ã£o")
+    MsgInfo("Estamos no [" + cNome + "], hoje é " + dToC(dDataAtu) + " , Ã s " + cHoraAtu, "Atenção")
+    MsgInfo("Ontem seria " + dToc(DaySub(dDataAtu,1)), "Atenção")
+    MsgInfo("MÃªs passado seria " + dToc(MonthSub(dDataAtu,1)), "Atenção")
 
     /* 5. Encerramento do programa*/
     Rest(aArea)

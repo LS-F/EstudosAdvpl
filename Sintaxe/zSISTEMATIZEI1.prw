@@ -12,15 +12,16 @@ Description
 /*/
 //--------------------------------------------------------------
 User Function zJanela2()                        
-Private cCodigo :=Space(3)
-Private cEndereco := Space(100)
-Private cNome := Space(60)
 Local oButton1
 Local oCodigo
 //Local cCodigo := "Define variable value"
 Local oEndereco
 //Local cEndereco := "Define variable value"
 Local oNome
+
+Private cCodigo   :=Space(3)
+Private cEndereco := Space(100)
+Private cNome     := Space(60)
 //Local cNome := "Define variable value"
 Static oJanela1
 
