@@ -72,12 +72,10 @@ WSMETHOD POST incluiProdutos WSREST wsprodutos
 
   Local cJSON    := Self:GetContent() 
   Local oJsnBody := JsonObject():New()
-  Local oJsonRet := JsonObject():New()
   Local cRetJson := oJsnBody:FromJson(cJSON)
   Local nI       := 0
   Local cLogErro := ""
   Local lRet     := .T.
-  Local aJsonRet := {}
   Local aDados   := {}
   Local aErroAuto:= {}
 
