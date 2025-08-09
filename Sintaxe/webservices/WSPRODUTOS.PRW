@@ -27,6 +27,7 @@ WSMETHOD GET produtos WSREST wsprodutos
   Local lRet     := .T.
   Local aJsonRet := {}
 
+  conout("### Iniciando rotina de consulta de produtos... ###")
 
   cRetJson := oJsnBody:FromJson(cJSON)
 
@@ -41,6 +42,9 @@ WSMETHOD GET produtos WSREST wsprodutos
   if !Empty(oJsnBody['codigo'])
     cQuery+= " AND B1_COD ='"+oJsnBody['codigo']+"' " 
   endif
+
+  conout(" ### query de produtos ###")
+  conout(cQuery)
   
   cQuery := ChangeQuery(cQuery)
   cAlias := MPSysOpenQuery(cQuery)
@@ -61,7 +65,7 @@ WSMETHOD GET produtos WSREST wsprodutos
   endif
 
 return lRet
-
+  
 /*/{Protheus.doc} WSMETHOD POST produtos
   serviço rest para cadastrar produto
   @type  Function
@@ -115,8 +119,7 @@ WSMETHOD POST incluiProdutos WSREST wsprodutos
                 {"B1_POSIPI"  ,oJsnBody['ncm']          ,Nil},;
                 {"B1_ORIGEM"  ,oJsnBody['origem']       ,Nil},;
                 {"B1_RASTRO"  ,oJsnBody['usaLote']      ,Nil},;
-                {"B1_LOCALIZ" ,oJsnBody['usaEndereco']  ,Nil},;
-                {"B1_XHIERA"  ,oJsnBody['hierarquia']   ,Nil}}
+                {"B1_LOCALIZ" ,oJsnBody['usaEndereco']  ,Nil}}
 
       MSExecAuto({|x,y| Mata010(x,y)},aDados,3)
     SB1->(DbCloseArea())
