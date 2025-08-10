@@ -51,8 +51,8 @@ WSMETHOD GET produtos WSREST wsprodutos
 
   While !(cAlias)->(Eof())\
     aAdd(aJsonRet,JsonObject():new())
-    aJsonRet[len(aJsonRet)]['codigo']    := (cAlias)->B1_COD  
-    aJsonRet[len(aJsonRet)]['descricao'] := (cAlias)->B1_DESC
+    aJsonRet[len(aJsonRet)]['codigoProduto']    := (cAlias)->B1_COD  
+    aJsonRet[len(aJsonRet)]['descProduto'] := (cAlias)->B1_DESC
     aJsonRet[len(aJsonRet)]['tipo']      := (cAlias)->B1_TIPO
     aJsonRet[len(aJsonRet)]['um']        := (cAlias)->B1_UM
     aJsonRet[len(aJsonRet)]['armazem']   := (cAlias)->B1_LOCPAD
