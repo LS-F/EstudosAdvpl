@@ -3,4 +3,4 @@ settings.json
 launch.json
 .vscode/.advpl/_binary_class.prw
 .vscode/.advpl/_binary_functions.prw
-.vscode/launch.jsongit rm -r --cached nome_da_pasta
+.vscode/launch.json
