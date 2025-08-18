@@ -14,6 +14,14 @@ User Function DEBUG()
 	SetModulo("SIGAEST", "EST")
 	SetHideInd(.T.)
 
-    U_WSTOKEN()
+	SZ2->(DbSelectArea("SZ2"))
+		RecLock('SZ2',.T.)
+			SZ2->Z2_FILIAL := ""
+			SZ2->Z2_MENU   := "001"
+			SZ2->Z2_DESC   := "Produtos"
+		MsUnlock()
+	SZ2->(DbCloseArea())
+
+    // U_WSTOKEN()
 
 Return
