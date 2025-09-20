@@ -17,15 +17,16 @@ WSMETHOD GET menus WSREST wsmenus
     Local lRet     := .T.
     Local aJsonRet := {}
 
-  conout("### Iniciando rotina de consulta de Menus... ###")
-
-  cRetJson := oJsnBody:FromJson(cJSON)
+    ::SetContentType( 'application/json' )
+    cRetJson := oJsnBody:FromJson(cJSON)
 
   if ValType(cRetJson) == "C"
     setrestfault(400, "Falha ao transformar texto em objeto json. Erro: " + cRetJson +".",.T.)
     lRet := .F.
     return lRet
   endIf
+  
+  conout("### Iniciando rotina de consulta de Menus... ###")
 
   cQuery+= " SELECT  * FROM "+RetSqlName("SZ2")+ " SZ2 (NOLOCK)"
   cQuery+= " WHERE SZ2.D_E_L_E_T_ ='' " 
