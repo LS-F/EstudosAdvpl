@@ -8,17 +8,17 @@ WSRESTFUL wsmenus DESCRIPTION "WS para retornar menus de acesso"
 END WSRESTFUL
 
 WSMETHOD GET menus WSREST wsmenus
-    Local cJSON    := Self:GetContent() 
-    Local oJsnBody := JsonObject():New()
-    Local oJsonRet := JsonObject():New()
-    Local cRetJson := oJsnBody:FromJson(cJSON)
-    Local cQuery   := ""
-    Local cAlias   := GetNextAlias()
-    Local lRet     := .T.
-    Local aJsonRet := {}
+  Local cJSON    := Self:GetContent() 
+  Local oJsnBody := JsonObject():New()
+  Local oJsonRet := JsonObject():New()
+  Local cRetJson := ""
+  Local cQuery   := ""
+  Local cAlias   := GetNextAlias()
+  Local lRet     := .T.
+  Local aJsonRet := {}
 
-    ::SetContentType( 'application/json' )
-    cRetJson := oJsnBody:FromJson(cJSON)
+
+  cRetJson := oJsnBody:FromJson(cJSON)
 
   if ValType(cRetJson) == "C"
     setrestfault(400, "Falha ao transformar texto em objeto json. Erro: " + cRetJson +".",.T.)
@@ -37,7 +37,7 @@ WSMETHOD GET menus WSREST wsmenus
   cQuery := ChangeQuery(cQuery)
   cAlias := MPSysOpenQuery(cQuery)
 
-  While !(cAlias)->(Eof())\
+  While !(cAlias)->(Eof())
     aAdd(aJsonRet,JsonObject():new())
     aJsonRet[len(aJsonRet)]['codigoMenu']    := (cAlias)->Z2_MENU  
     aJsonRet[len(aJsonRet)]['descMenu']      := (cAlias)->Z2_DESC
